@@ -28,3 +28,5 @@ export const MEETUP_HREF = `https://www.meetup.com/SiligongValley`;
 export const FACEBOOK_HREF = `https://www.facebook.com/siligongvalley`;
 export const WOLLONGONG_HREF = `https://www.visitnsw.com/destinations/south-coast/wollongong-and-surrounds/wollongong`;
 export const EMAIL_HREF = `mailto:hello@siligongvalley.com?Subject=enquiry from siligong.dev website`;
+
+export const MEETUP_API_ENDPOINT = `https://api.meetup.com/SiligongValley`;

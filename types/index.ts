@@ -3,3 +3,11 @@ export interface Link {
     icon: string;
     href: string;
 }
+
+export interface MeetupData {
+    members: number;
+}
+
+export interface LandingProps {
+    meetupData: MeetupData;
+}
