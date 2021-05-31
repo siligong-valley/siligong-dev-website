@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { blinkAnimation } from "../../animation";
 import {
     robotoFontSizeCss,
     robotoMonoFontSizeCss,
@@ -54,5 +55,12 @@ export const Link = styled.a`
 
         color: ${theme.colors.text.cta};
         text-decoration: underline;
+    `}
+`;
+
+export const Cursor = styled.span`
+    ${({ theme }) => css`
+        font-size: 23px;
+        ${blinkAnimation}
     `}
 `;

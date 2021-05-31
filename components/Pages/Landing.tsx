@@ -14,7 +14,7 @@ import {
     MetaLayout,
     PageLayout,
 } from "../Layouts";
-import { Link, MetaLi, SiteHeading, Strapline } from "../Typography";
+import { Cursor, Link, MetaLi, SiteHeading, Strapline } from "../Typography";
 
 export const Landing = () => (
     <PageLayout>
@@ -28,7 +28,7 @@ export const Landing = () => (
         <SiteHeading>Siligong.dev</SiteHeading>
         <Strapline>
             Siligong.dev is a community of coders that are looking to grow,
-            share knowledge &amp; hone their craft.
+            share knowledge &amp; hone their craft.<Cursor>&#9646;</Cursor>
         </Strapline>
         <MetaLayout>
             {/* This would be better as a table but time constrained */}
