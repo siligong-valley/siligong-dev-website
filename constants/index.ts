@@ -1,5 +1,5 @@
 export const SITE_HEADING = `Siligong.dev`;
-export const SITE_DESCRIPTION = `A community of coders that are looking to grow, share knowledge & hone their craft.`;
+export const SITE_DESCRIPTION = `A community of coders looking to grow, share knowledge & hone their craft.`;
 export const SITE_URL = `https://siligong.dev`;
 
 export const AUTHOR = `Siligong`;

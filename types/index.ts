@@ -6,6 +6,12 @@ export interface Link {
 
 export interface MeetupData {
     members: number;
+    next_event?: {
+        name: string;
+        time: number;
+        utc_offset: number;
+        yes_rsvp_count: number;
+    };
 }
 
 export interface LandingProps {

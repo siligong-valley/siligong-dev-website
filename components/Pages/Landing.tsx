@@ -9,6 +9,7 @@ import {
     WOLLONGONG_HREF,
 } from "../../constants";
 import { links } from "../../data/links";
+import { timestampToDisplay } from "../../dateFunctions";
 import { LandingProps } from "../../types";
 import { externalLinkProps } from "../../util/externalLinkProps";
 import {
@@ -21,6 +22,11 @@ import { Cursor, Link, MetaLi, SiteHeading, Strapline } from "../Typography";
 
 export const Landing = ({ meetupData }: LandingProps) => {
     const memberCount = meetupData?.members;
+    const nextEvent = meetupData?.next_event?.name
+        .toLocaleLowerCase()
+        .includes(`siligong.dev`)
+        ? meetupData.next_event
+        : null;
 
     return (
         <PageLayout>
@@ -49,7 +55,17 @@ export const Landing = ({ meetupData }: LandingProps) => {
                     </MetaLi>
                 )}
                 <MetaLi>
-                    <span>Next Meetup:</span> <strong>3rd June 2021</strong>
+                    <span>Next Meetup:</span>
+                    {nextEvent ? (
+                        <>
+                            <strong>
+                                {timestampToDisplay(nextEvent.time)}
+                            </strong>
+                            &nbsp; [ {nextEvent.yes_rsvp_count} attending ]
+                        </>
+                    ) : (
+                        <strong>to be determined</strong>
+                    )}
                 </MetaLi>
             </MetaLayout>
             <LinksLayout>
