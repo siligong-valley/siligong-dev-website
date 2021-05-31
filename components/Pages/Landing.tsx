@@ -4,6 +4,8 @@ import {
     EMAIL_FILEPATH,
     EMAIL_HREF,
     SILIGONG_LOGO_FILEPATH,
+    SITE_DESCRIPTION,
+    SITE_HEADING,
     WOLLONGONG_HREF,
 } from "../../constants";
 import { links } from "../../data/links";
@@ -25,10 +27,10 @@ export const Landing = () => (
             width="128"
             layout="fixed"
         />
-        <SiteHeading>Siligong.dev</SiteHeading>
+        <SiteHeading>{SITE_HEADING}</SiteHeading>
         <Strapline>
-            Siligong.dev is a community of coders that are looking to grow,
-            share knowledge &amp; hone their craft.<Cursor>&#9646;</Cursor>
+            {SITE_DESCRIPTION}
+            <Cursor>&#9646;</Cursor>
         </Strapline>
         <MetaLayout>
             {/* This would be better as a table but time constrained */}
