@@ -1,17 +1,27 @@
 import { createGlobalStyle } from "styled-components";
 import {
     ROBOTO,
+    ROBOTO_BOLD_FILEPATH,
     ROBOTO_MONO,
     ROBOTO_MONO_BOLD_FILEPATH,
     ROBOTO_MONO_REGULAR_FILEPATH,
+    ROBOTO_REGULAR_FILEPATH,
 } from "../constants";
+import { gridSquares } from "./grid";
 import { theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
     @font-face {
         font-family: ${ROBOTO};
-        src: url(${ROBOTO_MONO_REGULAR_FILEPATH}) format('ttf');
+        src: url(${ROBOTO_REGULAR_FILEPATH}) format('ttf');
         font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: ${ROBOTO};
+        src: url(${ROBOTO_BOLD_FILEPATH}) format('ttf');
+        font-weight: bold;
         font-style: normal;
     }
 
@@ -63,16 +73,20 @@ export const GlobalStyles = createGlobalStyle`
         background: ${theme.colors.background.app};
     }
 
-    #root,
-    #___gatsby,
-    #___gatsby > * {
+    #__next {
         width: 100%;
         flex-grow: 1;
         /* Safari bug fix */
         flex-shrink: 0;
 
+        padding: ${gridSquares(4)};
+
         display: flex;
         flex-direction: column;
+
+        @media (max-width: ${theme.mediaQuery.s}) {
+            padding: ${gridSquares(2)};
+        }
     }
 
     ul {

@@ -5,6 +5,7 @@ import {
     ROBOTO_REGULAR_FILEPATH,
     ROBOTO_MONO_REGULAR_FILEPATH,
     ROBOTO_MONO_BOLD_FILEPATH,
+    ROBOTO_BOLD_FILEPATH,
 } from "../constants";
 
 // https://styled-components.com/docs/advanced#server-side-rendering
@@ -50,6 +51,7 @@ export default class MyDocument extends Document {
                     />
                     {[
                         ROBOTO_REGULAR_FILEPATH,
+                        ROBOTO_BOLD_FILEPATH,
                         ROBOTO_MONO_REGULAR_FILEPATH,
                         ROBOTO_MONO_BOLD_FILEPATH,
                     ].map((filepath) => (

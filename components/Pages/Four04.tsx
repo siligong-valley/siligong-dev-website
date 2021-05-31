@@ -1,10 +1,12 @@
 import React from "react";
-import styled, { css } from "styled-components";
+import { PageLayout } from "../Layouts";
+import { Strapline } from "../Typography";
 
-const Layout = styled.section`
-    ${({ theme }) => css``}
-`;
-
-interface PropsType {}
-
-export const Four04 = ({}: PropsType) => <Layout>Four04</Layout>;
+export const Four04 = () => (
+    <PageLayout>
+        <Strapline>
+            <strong>404</strong>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Page not
+            found
+        </Strapline>
+    </PageLayout>
+);

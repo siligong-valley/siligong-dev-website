@@ -21,7 +21,7 @@ declare module "styled-components" {
                 body: string;
                 meta: string;
                 alt: string;
-                navLink: string;
+                cta: string;
             };
             border: string;
             focus: string;
@@ -47,8 +47,6 @@ declare module "styled-components" {
             paragraph: string;
         };
         mediaQuery: {
-            l: string;
-            m: string;
             s: string;
         };
         outlineOffset: {

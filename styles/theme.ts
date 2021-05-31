@@ -22,7 +22,7 @@ const theme: DefaultTheme = {
         text: {
             alt: baseColors.black[0],
             heading: baseColors.green[3],
-            navLink: baseColors.green[3],
+            cta: baseColors.green[3],
             body: baseColors.green[2],
             meta: baseColors.green[1],
         },
@@ -37,9 +37,9 @@ const theme: DefaultTheme = {
     },
     // https://type-scale.com/ - Major Second
     fontSize: {
-        xl: { capHeight: 16, lineGap: 8 },
-        l: { capHeight: 13, lineGap: 7 },
-        m: { capHeight: 10.25, lineGap: 8 },
+        xl: { capHeight: 18.25, lineGap: 8 },
+        l: { capHeight: 11.4, lineGap: 12 },
+        m: { capHeight: 10.15, lineGap: 8 },
         s: { capHeight: 9.05, lineGap: 4 },
     },
     fontWeight: {
@@ -53,8 +53,6 @@ const theme: DefaultTheme = {
         paragraph: gridSquares(160),
     },
     mediaQuery: {
-        l: `1330px`,
-        m: `940px`,
         s: `500px`,
     },
     outlineOffset: {
