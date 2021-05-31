@@ -8,19 +8,11 @@ declare module "styled-components" {
         };
         colors: {
             background: {
-                active: string;
                 app: string;
-                cta: string;
-                menu: string;
-                subMenu: string;
-                progress: string;
-                hover: string;
             };
             text: {
                 heading: string;
                 body: string;
-                meta: string;
-                alt: string;
                 cta: string;
             };
             border: string;
@@ -28,9 +20,6 @@ declare module "styled-components" {
             text: string;
             shadow: string;
             theme: string;
-        };
-        duration: {
-            loader: string;
         };
         fontFamily: {
             primary: string;
@@ -44,19 +33,8 @@ declare module "styled-components" {
         grid: {
             square: number;
         };
-        maxWidth: {
-            paragraph: string;
-        };
         mediaQuery: {
             s: string;
         };
-        outlineOffset: {
-            l: string;
-            s: string;
-        };
-        padding: {
-            innerPageLayout: string;
-        };
-        transition: (property: string) => string;
     }
 }

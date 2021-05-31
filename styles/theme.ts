@@ -9,28 +9,17 @@ const theme: DefaultTheme = {
     },
     colors: {
         background: {
-            active: baseColors.green[1],
             app: baseColors.black[0],
-            cta: baseColors.green[3],
-            menu: baseColors.green[3],
-            subMenu: baseColors.green[2],
-            progress: baseColors.green[1],
-            hover: baseColors.green[2],
         },
         border: baseColors.green[1],
         focus: baseColors.green[1],
         text: {
-            alt: baseColors.black[0],
             heading: baseColors.green[3],
             cta: baseColors.green[3],
             body: baseColors.green[2],
-            meta: baseColors.green[1],
         },
         shadow: baseColors.green[0],
         theme: baseColors.green[2],
-    },
-    duration: {
-        loader: `3s`,
     },
     fontFamily: {
         primary: `${ROBOTO}, sans-serif`,
@@ -50,20 +39,9 @@ const theme: DefaultTheme = {
     grid: {
         square: GRID_SQUARE,
     },
-    maxWidth: {
-        paragraph: gridSquares(160),
-    },
     mediaQuery: {
         s: `500px`,
     },
-    outlineOffset: {
-        l: `8px`,
-        s: `4px`,
-    },
-    padding: {
-        innerPageLayout: gridSquares(6),
-    },
-    transition: (property) => `${property} 0.15s linear`,
 };
 
 export { theme };
