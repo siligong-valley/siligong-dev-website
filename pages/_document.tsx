@@ -42,13 +42,6 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     {/* https://web.dev/preload-optional-fonts/?utm_source=lighthouse&utm_medium=devtools */}
-                    <link
-                        rel="preload"
-                        as="font"
-                        href="/fonts/Orbitron-VariableFont_wght.ttf"
-                        type="font/ttf"
-                        crossOrigin="anonymous"
-                    />
                     {[
                         ROBOTO_REGULAR_FILEPATH,
                         ROBOTO_BOLD_FILEPATH,
