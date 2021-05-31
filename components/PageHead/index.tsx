@@ -34,7 +34,7 @@ export const PageHead = ({
     const { pathname } = useRouter();
     const pageUrl = `${SITE_URL}${pathname}`;
     const ogImageUrl = `${SITE_URL}/ogImage.png`;
-    const themeColor = theme.colors.blue[0];
+    const themeColor = theme.colors.theme;
 
     return (
         <NextHead>

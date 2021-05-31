@@ -27,6 +27,7 @@ const theme: DefaultTheme = {
             meta: baseColors.green[1],
         },
         shadow: baseColors.green[0],
+        theme: baseColors.green[2],
     },
     duration: {
         loader: `3s`,

@@ -27,6 +27,7 @@ declare module "styled-components" {
             focus: string;
             text: string;
             shadow: string;
+            theme: string;
         };
         duration: {
             loader: string;
