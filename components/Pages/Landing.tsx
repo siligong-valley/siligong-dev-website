@@ -12,6 +12,7 @@ import { links } from "../../data/links";
 import { timestampToDisplay } from "../../dateFunctions";
 import { LandingProps } from "../../types";
 import { externalLinkProps } from "../../util/externalLinkProps";
+import { getNextEvent } from "../../util/getNextEvent";
 import {
     IconTextLayout,
     LinksLayout,
@@ -22,11 +23,7 @@ import { Cursor, Link, MetaLi, SiteHeading, Strapline } from "../Typography";
 
 export const Landing = ({ meetupData }: LandingProps) => {
     const memberCount = meetupData?.members;
-    const nextEvent = meetupData?.next_event?.name
-        .toLocaleLowerCase()
-        .includes(`siligong.dev`)
-        ? meetupData.next_event
-        : null;
+    const nextEvent = getNextEvent(meetupData);
 
     return (
         <PageLayout>
@@ -46,7 +43,9 @@ export const Landing = ({ meetupData }: LandingProps) => {
                 {/* This would be better as a table but time constrained */}
                 <MetaLi>
                     <span>Located:</span>{" "}
-                    <a href={WOLLONGONG_HREF}>Wollongong, Australia</a>
+                    <a href={WOLLONGONG_HREF} {...externalLinkProps}>
+                        Wollongong, Australia
+                    </a>
                 </MetaLi>
                 {memberCount && (
                     <MetaLi>

@@ -30,3 +30,5 @@ export const WOLLONGONG_HREF = `https://www.visitnsw.com/destinations/south-coas
 export const EMAIL_HREF = `mailto:hello@siligongvalley.com?Subject=enquiry from siligong.dev website`;
 
 export const MEETUP_API_ENDPOINT = `https://api.meetup.com/SiligongValley`;
+
+export const MEETUP_DATA_EVENT_KEYWORD = `siligong.dev`;
