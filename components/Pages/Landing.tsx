@@ -37,10 +37,10 @@ export const Landing = () => (
                 <a href={WOLLONGONG_HREF}>Wollongong, Australia</a>
             </MetaLi>
             <MetaLi>
-                <span>No. of members:</span> <strong>1002</strong>
+                <span>No. of members:</span> <strong>1309</strong>
             </MetaLi>
             <MetaLi>
-                <span>Next Meetup:</span> <strong>12th June 2021</strong>
+                <span>Next Meetup:</span> <strong>3rd June 2021</strong>
             </MetaLi>
         </MetaLayout>
         <LinksLayout>
