@@ -22,12 +22,14 @@ export const TWITTER_FILEPATH = `/icons/twitter.svg`;
 export const MEETUP_FILEPATH = `/icons/meetup.svg`;
 export const EMAIL_FILEPATH = `/icons/email.svg`;
 
+export const EMAIL = `jared@easyagile.com`;
+
 export const SLACK_HREF = `https://join.slack.com/t/siligong/shared_invite/zt-pvedqwn7-rQCQRQQEmxpZFGbC5R886Q`;
 export const TWITTER_HREF = `https://twitter.com/siligongvalley`;
 export const MEETUP_HREF = `https://www.meetup.com/SiligongValley`;
 export const FACEBOOK_HREF = `https://www.facebook.com/siligongvalley`;
 export const WOLLONGONG_HREF = `https://www.visitnsw.com/destinations/south-coast/wollongong-and-surrounds/wollongong`;
-export const EMAIL_HREF = `mailto:hello@siligongvalley.com?Subject=enquiry from siligong.dev website`;
+export const EMAIL_HREF = `mailto:${EMAIL}?Subject=enquiry from siligong.dev website`;
 
 export const MEETUP_API_ENDPOINT = `https://api.meetup.com/SiligongValley`;
 

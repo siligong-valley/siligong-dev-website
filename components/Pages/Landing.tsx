@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import {
+    EMAIL,
     EMAIL_FILEPATH,
     EMAIL_HREF,
     SILIGONG_LOGO_FILEPATH,
@@ -93,7 +94,7 @@ export const Landing = ({ meetupData }: LandingProps) => {
                             height="16"
                             width="16"
                         />
-                        <span>hello@siligongvalley.com</span>
+                        <span>{EMAIL}</span>
                     </IconTextLayout>
                 </Link>
             </PageLayout>
