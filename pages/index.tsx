@@ -1,6 +1,9 @@
 import React from "react";
 import { Landing } from "../components/Pages/Landing";
-import { MEETUP_API_EVENTS_ENDPOINT, MEETUP_API_GROUP_ENDPOINT } from "../constants";
+import {
+    MEETUP_API_EVENTS_ENDPOINT,
+    MEETUP_API_GROUP_ENDPOINT,
+} from "../constants";
 import { LandingProps, MeetupEventsData, MeetupGroupData } from "../types";
 
 // this codebase doesn't use export default however it is a requirement of next.js for pages
