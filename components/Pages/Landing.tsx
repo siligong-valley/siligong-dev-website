@@ -23,9 +23,9 @@ import {
 import { PageHead } from "../PageHead";
 import { Cursor, Link, MetaLi, SiteHeading, Strapline } from "../Typography";
 
-export const Landing = ({ meetupData }: LandingProps) => {
-    const memberCount = meetupData?.members;
-    const nextEvent = getNextEvent(meetupData);
+export const Landing = ({ meetupGroupData, meetupEventsData }: LandingProps) => {
+    const memberCount = meetupGroupData?.members;
+    const nextEvent = getNextEvent(meetupEventsData);
 
     return (
         <>

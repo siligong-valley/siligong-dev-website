@@ -4,16 +4,21 @@ export interface Link {
     href: string;
 }
 
-export interface MeetupData {
-    members: number;
-    next_event?: {
-        name: string;
-        time: number;
-        utc_offset: number;
-        yes_rsvp_count: number;
-    };
+export interface MeetupEvent {
+    name: string;
+    time: number;
+    utc_offset: number;
+    yes_rsvp_count: number;
 }
 
+export interface MeetupGroupData {
+    members: number;
+    next_event?: MeetupEvent;
+}
+
+export type MeetupEventsData = Array<MeetupEvent>;
+
 export interface LandingProps {
-    meetupData: MeetupData;
+    meetupGroupData: MeetupGroupData;
+    meetupEventsData: MeetupEventsData;
 }
