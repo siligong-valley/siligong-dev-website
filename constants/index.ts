@@ -39,3 +39,7 @@ export const MEETUP_API_GROUP_ENDPOINT = `https://api.meetup.com/SiligongValley`
 export const MEETUP_API_EVENTS_ENDPOINT = `https://api.meetup.com/SiligongValley/events`;
 
 export const MEETUP_DATA_EVENT_KEYWORD = `siligong.dev`;
+
+export const TECH_BALLOT_TABLE = `techBallot`;
+
+export const VOTE_API_ENDPOINT = `/api/vote`;

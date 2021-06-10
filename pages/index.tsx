@@ -3,6 +3,7 @@ import { Landing } from "../components/Pages/Landing";
 import {
     MEETUP_API_EVENTS_ENDPOINT,
     MEETUP_API_GROUP_ENDPOINT,
+    TECH_BALLOT_TABLE,
 } from "../constants";
 import {
     LandingProps,
@@ -10,7 +11,7 @@ import {
     MeetupGroupData,
     TechBallot,
 } from "../types";
-var Airtable = require("airtable");
+import Airtable from "airtable";
 
 // this codebase doesn't use export default however it is a requirement of next.js for pages
 export default function LandingPage(props: LandingProps) {
@@ -18,7 +19,7 @@ export default function LandingPage(props: LandingProps) {
 }
 
 export const getServerSideProps = async () => {
-    var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
+    const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
         process.env.AIRTABLE_BASE_ID
     );
 
@@ -30,7 +31,7 @@ export const getServerSideProps = async () => {
         const responses = await Promise.allSettled([
             fetch(MEETUP_API_GROUP_ENDPOINT),
             fetch(MEETUP_API_EVENTS_ENDPOINT),
-            base("techVotes").select({}).firstPage(),
+            base(TECH_BALLOT_TABLE).select({}).firstPage(),
         ]);
 
         if (responses[0].status === `fulfilled`) {
@@ -43,8 +44,8 @@ export const getServerSideProps = async () => {
 
         if (responses[2].status === `fulfilled`) {
             techBallot = responses[2].value.map((record) => ({
-                name: record.get(`name`),
-                votes: record.get(`votes`),
+                name: record.get(`name`) as string,
+                votes: record.get(`votes`) as number,
             }));
         }
     } catch {}

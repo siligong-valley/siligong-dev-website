@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { gridSquares } from "../../styles/grid";
 import { LandingProps } from "../../types";
 import { PollLayout } from "../Layouts/Landing";
 import { ButtonText, SectionHeading } from "../Typography";
 import sortBy from "lodash/sortBy";
+import { VOTE_API_ENDPOINT } from "../../constants";
 
 export const Button = styled.button`
     ${({ theme }) => css`
@@ -30,7 +31,26 @@ export const LineLayout = styled.div`
 `;
 
 export const Poll = ({ techBallotData }: LandingProps) => {
-    const highestVotes = Math.max(...techBallotData.map(({ votes }) => votes));
+    const [data, setData] = useState(techBallotData);
+    const highestVotes = Math.max(...data.map(({ votes }) => votes));
+
+    const onClick = async (name: string) => {
+        try {
+            await fetch(VOTE_API_ENDPOINT, {
+                method: `POST`,
+                headers: { "Content-Type": `application/json` },
+                body: JSON.stringify({ name }),
+            });
+
+            setData((staleData) =>
+                staleData.map((entry) =>
+                    entry.name === name
+                        ? { ...entry, votes: entry.votes + 1 }
+                        : entry
+                )
+            );
+        } catch (error) {}
+    };
 
     return (
         <PollLayout className="poll">
@@ -38,11 +58,11 @@ export const Poll = ({ techBallotData }: LandingProps) => {
                 What tech. are you interested in hearing about?
             </SectionHeading>
             <ul>
-                {sortBy(techBallotData, ({ votes }) => votes)
+                {sortBy(data, ({ votes }) => votes)
                     .reverse()
                     .map(({ name, votes }) => (
                         <li key={name}>
-                            <Button>
+                            <Button onClick={() => onClick(name)}>
                                 <ButtonText>{name}</ButtonText>
                             </Button>
                             <LineLayout>
