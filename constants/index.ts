@@ -16,6 +16,7 @@ export const ROBOTO_MONO_REGULAR_FILEPATH = `/fonts/Roboto_Mono/static/RobotoMon
 export const ROBOTO_MONO_BOLD_FILEPATH = `/fonts/Roboto_Mono/static/RobotoMono-Bold.ttf`;
 
 export const SILIGONG_LOGO_FILEPATH = `/icons/siligongLogo.svg`;
+export const FOUR04_FILEPATH = `/icons/four04.svg`;
 export const SLACK_FILEPATH = `/icons/slack.svg`;
 export const FACEBOOK_FILEPATH = `/icons/facebook.svg`;
 export const TWITTER_FILEPATH = `/icons/twitter.svg`;
