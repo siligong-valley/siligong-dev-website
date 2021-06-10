@@ -6,7 +6,7 @@ import { vote } from "../../requests";
 import { gridSquares } from "../../styles/grid";
 import { LandingProps } from "../../types";
 import { PollLayout } from "../Layouts/Landing";
-import { ButtonText, SectionHeading } from "../Typography";
+import { ButtonText, Loader, SectionHeading } from "../Typography";
 
 export const Button = styled.button`
     ${({ theme }) => css`
@@ -59,8 +59,11 @@ export const LineLayout = styled.div`
     `}
 `;
 
+// This need better error handling but contained for time.
+
 export const Ballot = ({ techBallotData }: LandingProps) => {
     const [data, setData] = useState(techBallotData);
+    const [isWaiting, setWaiting] = useState(false);
     const highestVotes = Math.max(
         ...data.map(({ votes }) => votes),
         MIN_MOST_VOTES
@@ -68,8 +71,9 @@ export const Ballot = ({ techBallotData }: LandingProps) => {
 
     const onClick = async (name: string) => {
         try {
+            setWaiting(true);
             await vote(name);
-
+            setWaiting(false);
             setData((staleData) =>
                 staleData.map((entry) =>
                     entry.name === name
@@ -77,7 +81,9 @@ export const Ballot = ({ techBallotData }: LandingProps) => {
                         : entry
                 )
             );
-        } catch (error) {}
+        } catch (error) {
+            setWaiting(false);
+        }
     };
 
     return (
@@ -85,29 +91,35 @@ export const Ballot = ({ techBallotData }: LandingProps) => {
             <SectionHeading>
                 What tech. are you interested in hearing about?
             </SectionHeading>
-            <ul>
-                {sortBy(data, ({ votes }) => votes)
-                    .reverse()
-                    .map(({ name, votes }) => (
-                        <li key={name}>
-                            <Button onClick={() => onClick(name)}>
-                                <ButtonText className="buttonText">
-                                    {name}
-                                </ButtonText>
-                                <LineLayout className="line">
-                                    <div
-                                        style={{
-                                            width: `${
-                                                (votes / highestVotes) * 100
-                                            }%`,
-                                        }}
-                                    />
-                                </LineLayout>
-                                <ButtonText className="vote">vote!</ButtonText>
-                            </Button>
-                        </li>
-                    ))}
-            </ul>
+            {isWaiting ? (
+                <Loader>Voting...</Loader>
+            ) : (
+                <ul>
+                    {sortBy(data, ({ votes }) => votes)
+                        .reverse()
+                        .map(({ name, votes }) => (
+                            <li key={name}>
+                                <Button onClick={() => onClick(name)}>
+                                    <ButtonText className="buttonText">
+                                        {name}
+                                    </ButtonText>
+                                    <LineLayout className="line">
+                                        <div
+                                            style={{
+                                                width: `${
+                                                    (votes / highestVotes) * 100
+                                                }%`,
+                                            }}
+                                        />
+                                    </LineLayout>
+                                    <ButtonText className="vote">
+                                        vote!
+                                    </ButtonText>
+                                </Button>
+                            </li>
+                        ))}
+                </ul>
+            )}
         </PollLayout>
     );
 };

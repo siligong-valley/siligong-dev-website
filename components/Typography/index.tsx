@@ -81,3 +81,15 @@ export const Cursor = styled.span`
         ${blinkAnimation}
     `}
 `;
+
+export const Loader = styled.p`
+    ${({ theme }) => css`
+        ${robotoFontSizeCss.m};
+
+        font-weight: ${theme.fontWeight.bold};
+        color: ${theme.colors.text.cta};
+        white-space: nowrap;
+
+        ${blinkAnimation}
+    `}
+`;
