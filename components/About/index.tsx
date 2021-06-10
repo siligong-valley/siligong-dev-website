@@ -15,11 +15,7 @@ import { MetaLayout } from "../Layouts";
 import { AboutLayout } from "../Layouts/Landing";
 import { Cursor, MetaLi, SiteHeading, Strapline } from "../Typography";
 
-export const About = ({
-    meetupGroupData,
-    meetupEventsData,
-    techBallotData,
-}: LandingProps) => {
+export const About = ({ meetupGroupData, meetupEventsData }: LandingProps) => {
     const memberCount = meetupGroupData?.members;
     const nextEvent = getNextEvent(meetupEventsData);
 

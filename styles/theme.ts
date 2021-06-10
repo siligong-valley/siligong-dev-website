@@ -13,12 +13,13 @@ const theme: DefaultTheme = {
         },
         border: baseColors.green[1],
         focus: baseColors.green[1],
+        hover: baseColors.green[1],
+        shadow: baseColors.green[0],
         text: {
             heading: baseColors.green[3],
             cta: baseColors.green[3],
             body: baseColors.green[2],
         },
-        shadow: baseColors.green[0],
         theme: baseColors.green[2],
     },
     fontFamily: {

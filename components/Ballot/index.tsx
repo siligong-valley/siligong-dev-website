@@ -10,13 +10,41 @@ import { ButtonText, SectionHeading } from "../Typography";
 
 export const Button = styled.button`
     ${({ theme }) => css`
-        width: ${gridSquares(28)};
+        width: calc(100% + ${gridSquares(2)});
         height: ${gridSquares(10)};
-        padding: 0 ${gridSquares(2)};
+        padding-left: ${gridSquares(2)};
 
         display: flex;
         align-items: center;
-        flex-shrink: 0;
+
+        > :not(:first-child) {
+            margin-left: ${gridSquares(2)};
+        }
+
+        .buttonText {
+            width: ${gridSquares(24)};
+            text-align: left;
+        }
+
+        .vote {
+            display: none;
+        }
+
+        :hover {
+            background: ${theme.colors.hover};
+
+            span {
+                color: ${theme.colors.background.app};
+            }
+
+            .line {
+                display: none;
+            }
+
+            .vote {
+                display: unset;
+            }
+        }
     `}
 `;
 
@@ -31,7 +59,7 @@ export const LineLayout = styled.div`
     `}
 `;
 
-export const Poll = ({ techBallotData }: LandingProps) => {
+export const Ballot = ({ techBallotData }: LandingProps) => {
     const [data, setData] = useState(techBallotData);
     const highestVotes = Math.max(
         ...data.map(({ votes }) => votes),
@@ -63,17 +91,20 @@ export const Poll = ({ techBallotData }: LandingProps) => {
                     .map(({ name, votes }) => (
                         <li key={name}>
                             <Button onClick={() => onClick(name)}>
-                                <ButtonText>{name}</ButtonText>
+                                <ButtonText className="buttonText">
+                                    {name}
+                                </ButtonText>
+                                <LineLayout className="line">
+                                    <div
+                                        style={{
+                                            width: `${
+                                                (votes / highestVotes) * 100
+                                            }%`,
+                                        }}
+                                    />
+                                </LineLayout>
+                                <ButtonText className="vote">vote!</ButtonText>
                             </Button>
-                            <LineLayout>
-                                <div
-                                    style={{
-                                        width: `${
-                                            (votes / highestVotes) * 100
-                                        }%`,
-                                    }}
-                                />
-                            </LineLayout>
                         </li>
                     ))}
             </ul>

@@ -84,6 +84,8 @@ export const LandingLayout = styled.section`
 export const AboutLayout = styled.section`
     ${({ theme }) => css`
         width: 100%;
+        /* this is to prevent an overlap issue with Ballot */
+        max-width: ${gridSquares(160)};
 
         display: flex;
         flex-direction: column;
@@ -114,7 +116,6 @@ export const PollLayout = styled.section`
 
             li {
                 display: flex;
-                align-items: center;
             }
         }
     `}

@@ -4,7 +4,7 @@ import { About } from "../About";
 import { Contact } from "../Contact";
 import { LandingLayout } from "../Layouts/Landing";
 import { PageHead } from "../PageHead";
-import { Poll } from "../Poll";
+import { Ballot } from "../Ballot";
 import { Social } from "../Social";
 import { Sponsors } from "../Sponsors";
 
@@ -12,8 +12,8 @@ export const Landing = (props: LandingProps) => (
     <>
         <PageHead />
         <LandingLayout>
-            <Poll {...props} />
             <About {...props} />
+            <Ballot {...props} />
             <Contact />
             <Sponsors />
             <Social />
