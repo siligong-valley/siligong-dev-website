@@ -50,7 +50,7 @@ export const LandingLayout = styled.section`
                 "social" auto
                 / 1fr;
 
-            grid-gap: ${gridSquares(20)} 0;
+            /* grid-gap: ${gridSquares(20)} 0; */
             justify-items: center;
 
             .about {
@@ -67,6 +67,15 @@ export const LandingLayout = styled.section`
 
                 align-self: unset;
                 justify-self: unset;
+            }
+
+            > :not(.social) {
+                padding-bottom: ${gridSquares(10)};
+            }
+
+            > :not(.about) {
+                padding-top: ${gridSquares(10)};
+                border-top: 1px dashed ${theme.colors.border};
             }
         }
     `}
@@ -166,6 +175,10 @@ export const SponsorsLayout = styled.section`
                 display: flex;
             }
         }
+
+        @media (max-width: ${theme.mediaQuery.m}) {
+            transform: none;
+        }
     `}
 `;
 
@@ -190,6 +203,7 @@ export const SocialLayout = styled.ul`
 
         @media (max-width: ${theme.mediaQuery.m}) {
             justify-content: center;
+            transform: none;
         }
     `}
 `;
