@@ -59,8 +59,19 @@ export const Link = styled.a`
     ${({ theme }) => css`
         ${robotoFontSizeCss.m};
 
+        font-weight: ${theme.fontWeight.bold};
         color: ${theme.colors.text.cta};
         text-decoration: underline;
+    `}
+`;
+
+export const ButtonText = styled.span`
+    ${({ theme }) => css`
+        ${robotoFontSizeCss.m};
+
+        font-weight: ${theme.fontWeight.bold};
+        color: ${theme.colors.text.cta};
+        white-space: nowrap;
     `}
 `;
 

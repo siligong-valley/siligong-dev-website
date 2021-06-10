@@ -33,17 +33,19 @@ export const LandingLayout = styled.section`
             justify-self: end;
             align-self: end;
         }
+
+        .about {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     `}
 `;
 
 export const AboutLayout = styled.section`
     ${({ theme }) => css`
         width: 100%;
-
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
 
         display: flex;
         flex-direction: column;
@@ -62,7 +64,20 @@ export const PollLayout = styled.section`
         align-items: flex-start;
 
         > :not(:first-child) {
-            margin-top: ${gridSquares(10)};
+            margin-top: ${gridSquares(4)};
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            /* for alignment */
+            transform: translateX(-${gridSquares(2)});
+
+            li {
+                display: flex;
+                align-items: center;
+            }
         }
     `}
 `;
@@ -73,7 +88,7 @@ export const ContactLayout = styled.section`
         flex-direction: column;
 
         > :not(:first-child) {
-            margin-top: ${gridSquares(4)};
+            margin-top: ${gridSquares(6)};
         }
 
         ul {
@@ -82,7 +97,7 @@ export const ContactLayout = styled.section`
             align-items: flex-end;
 
             > :not(:first-child) {
-                margin-top: ${gridSquares(4)};
+                margin-top: ${gridSquares(6)};
             }
 
             li {
@@ -99,7 +114,7 @@ export const SponsorsLayout = styled.section`
         align-items: flex-start;
 
         > :not(:first-child) {
-            margin-top: ${gridSquares(4)};
+            margin-top: ${gridSquares(6)};
         }
 
         ul {
@@ -119,6 +134,9 @@ export const SponsorsLayout = styled.section`
 export const SocialLayout = styled.ul`
     ${({ theme }) => css`
         display: flex;
+
+        /* for alignment */
+        transform: translate(${gridSquares(2)}, ${gridSquares(3)});
 
         > :not(:first-child) {
             margin-left: ${gridSquares(4)};
