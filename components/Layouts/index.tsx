@@ -50,24 +50,6 @@ export const MetaLayout = styled.ul`
     `}
 `;
 
-export const LinksLayout = styled.ul`
-    ${({ theme }) => css`
-        display: flex;
-
-        > :not(:first-child) {
-            margin-left: ${gridSquares(4)};
-        }
-
-        li {
-            display: flex;
-
-            a {
-                padding: ${gridSquares(1.75)};
-            }
-        }
-    `}
-`;
-
 export const IconTextLayout = styled.div`
     ${({ theme }) => css`
         display: flex;

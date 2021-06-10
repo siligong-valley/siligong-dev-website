@@ -7,12 +7,11 @@ import {
     SITE_HEADING,
     WOLLONGONG_HREF,
 } from "../../constants";
-import { links } from "../../data/links";
 import { timestampToDisplay } from "../../dateFunctions";
 import { LandingProps } from "../../types";
 import { externalLinkProps } from "../../util/externalLinkProps";
 import { getNextEvent } from "../../util/getNextEvent";
-import { LinksLayout, MetaLayout } from "../Layouts";
+import { MetaLayout } from "../Layouts";
 import { AboutLayout } from "../Layouts/Landing";
 import { Cursor, MetaLi, SiteHeading, Strapline } from "../Typography";
 
@@ -25,7 +24,7 @@ export const About = ({
     const nextEvent = getNextEvent(meetupEventsData);
 
     return (
-        <AboutLayout>
+        <AboutLayout className="about">
             <Image
                 alt="A duck"
                 src={SILIGONG_LOGO_FILEPATH}
@@ -72,21 +71,6 @@ export const About = ({
                     )}
                 </MetaLi>
             </MetaLayout>
-            <LinksLayout>
-                {links.map(({ href, icon, name }) => (
-                    <li key={name}>
-                        <a href={href} {...externalLinkProps}>
-                            <Image
-                                alt={name}
-                                src={icon}
-                                height="24"
-                                width="24"
-                                layout="fixed"
-                            />
-                        </a>
-                    </li>
-                ))}
-            </LinksLayout>
         </AboutLayout>
     );
 };

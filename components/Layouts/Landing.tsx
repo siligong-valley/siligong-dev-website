@@ -10,9 +10,29 @@ export const LandingLayout = styled.section`
 
         display: grid;
         grid:
-            1fr
-            1fr
+            "poll contact" 1fr
+            "sponsors social" 1fr
             / 1fr 1fr;
+
+        .poll {
+            grid-area: poll;
+        }
+
+        .contact {
+            grid-area: contact;
+            justify-self: end;
+        }
+
+        .sponsors {
+            grid-area: sponsors;
+            align-self: end;
+        }
+
+        .social {
+            grid-area: social;
+            justify-self: end;
+            align-self: end;
+        }
     `}
 `;
 
@@ -51,7 +71,6 @@ export const ContactLayout = styled.section`
     ${({ theme }) => css`
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
 
         > :not(:first-child) {
             margin-top: ${gridSquares(4)};
@@ -92,6 +111,24 @@ export const SponsorsLayout = styled.section`
 
             li {
                 display: flex;
+            }
+        }
+    `}
+`;
+
+export const SocialLayout = styled.ul`
+    ${({ theme }) => css`
+        display: flex;
+
+        > :not(:first-child) {
+            margin-left: ${gridSquares(4)};
+        }
+
+        li {
+            display: flex;
+
+            a {
+                padding: ${gridSquares(1.75)};
             }
         }
     `}
