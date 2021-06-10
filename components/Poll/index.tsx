@@ -1,11 +1,12 @@
+import sortBy from "lodash/sortBy";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import { MIN_MOST_VOTES } from "../../constants";
+import { vote } from "../../requests";
 import { gridSquares } from "../../styles/grid";
 import { LandingProps } from "../../types";
 import { PollLayout } from "../Layouts/Landing";
 import { ButtonText, SectionHeading } from "../Typography";
-import sortBy from "lodash/sortBy";
-import { MIN_MOST_VOTES, VOTE_API_ENDPOINT } from "../../constants";
 
 export const Button = styled.button`
     ${({ theme }) => css`
@@ -39,11 +40,7 @@ export const Poll = ({ techBallotData }: LandingProps) => {
 
     const onClick = async (name: string) => {
         try {
-            await fetch(VOTE_API_ENDPOINT, {
-                method: `POST`,
-                headers: { "Content-Type": `application/json` },
-                body: JSON.stringify({ name }),
-            });
+            await vote(name);
 
             setData((staleData) =>
                 staleData.map((entry) =>
