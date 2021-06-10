@@ -1,6 +1,24 @@
 import styled, { css } from "styled-components";
 import { gridSquares } from "../../styles/grid";
 
+export const AppLayout = styled.div`
+    ${({ theme }) => css`
+        width: 100%;
+        flex-grow: 1;
+        padding: ${gridSquares(6)};
+
+        display: flex;
+
+        border: 1px solid ${theme.colors.border};
+        border-radius: ${theme.borderRadius.pageBorder};
+        box-shadow: inset 0px 0px 0px 2px ${theme.colors.shadow};
+
+        @media (max-width: ${theme.mediaQuery.s}) {
+            padding: ${gridSquares(4)};
+        }
+    `}
+`;
+
 export const PageLayout = styled.section`
     ${({ theme }) => css`
         width: 100%;

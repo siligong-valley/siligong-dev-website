@@ -3,6 +3,12 @@ export interface Link {
     icon: string;
     href: string;
 }
+
+export interface Contact {
+    display: string;
+    href: string;
+}
+
 export interface MeetupEvent {
     name: string;
     time: number;

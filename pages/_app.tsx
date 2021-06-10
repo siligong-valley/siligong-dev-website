@@ -1,5 +1,6 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { AppLayout } from "../components/Layouts";
 import { ScanLines, Vignette } from "../components/Textures";
 import { consoleMessage } from "../consoleMessage";
 import { useKeyboardUserHandler } from "../hooks/useKeyboardUserHandler";
@@ -16,7 +17,9 @@ export default function App({ Component, pageProps }) {
             <GlobalStyles />
             <ScanLines />
             <Vignette />
-            <Component {...pageProps} />
+            <AppLayout>
+                <Component {...pageProps} />
+            </AppLayout>
         </ThemeProvider>
     );
 }

@@ -26,6 +26,12 @@ export const Strapline = styled.p`
     `}
 `;
 
+export const SectionHeading = styled.h1`
+    ${({ theme }) => css`
+        ${robotoFontSizeCss.m};
+    `}
+`;
+
 export const MetaLi = styled.li`
     ${({ theme }) => css`
         ${robotoFontSizeCss.m};
