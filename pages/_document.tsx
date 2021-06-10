@@ -10,6 +10,7 @@ import {
 
 // https://styled-components.com/docs/advanced#server-side-rendering
 
+// this codebase doesn't use export default however it is a requirement of next.js for this component
 export default class MyDocument extends Document {
     static async getInitialProps(ctx) {
         const sheet = new ServerStyleSheet();

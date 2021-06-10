@@ -3,7 +3,6 @@ export interface Link {
     icon: string;
     href: string;
 }
-
 export interface MeetupEvent {
     name: string;
     time: number;
@@ -18,7 +17,15 @@ export interface MeetupGroupData {
 
 export type MeetupEventsData = Array<MeetupEvent>;
 
+export interface TechBallotEntry {
+    name: string;
+    votes: number;
+}
+
+export type TechBallot = TechBallotEntry[];
+
 export interface LandingProps {
     meetupGroupData: MeetupGroupData;
     meetupEventsData: MeetupEventsData;
+    techBallotData: TechBallot;
 }

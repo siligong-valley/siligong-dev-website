@@ -23,7 +23,11 @@ import {
 import { PageHead } from "../PageHead";
 import { Cursor, Link, MetaLi, SiteHeading, Strapline } from "../Typography";
 
-export const Landing = ({ meetupGroupData, meetupEventsData }: LandingProps) => {
+export const Landing = ({
+    meetupGroupData,
+    meetupEventsData,
+    techBallotData,
+}: LandingProps) => {
     const memberCount = meetupGroupData?.members;
     const nextEvent = getNextEvent(meetupEventsData);
 
