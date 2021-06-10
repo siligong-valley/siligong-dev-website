@@ -5,7 +5,7 @@ import { LandingProps } from "../../types";
 import { PollLayout } from "../Layouts/Landing";
 import { ButtonText, SectionHeading } from "../Typography";
 import sortBy from "lodash/sortBy";
-import { VOTE_API_ENDPOINT } from "../../constants";
+import { MIN_MOST_VOTES, VOTE_API_ENDPOINT } from "../../constants";
 
 export const Button = styled.button`
     ${({ theme }) => css`
@@ -32,7 +32,10 @@ export const LineLayout = styled.div`
 
 export const Poll = ({ techBallotData }: LandingProps) => {
     const [data, setData] = useState(techBallotData);
-    const highestVotes = Math.max(...data.map(({ votes }) => votes));
+    const highestVotes = Math.max(
+        ...data.map(({ votes }) => votes),
+        MIN_MOST_VOTES
+    );
 
     const onClick = async (name: string) => {
         try {

@@ -43,3 +43,5 @@ export const MEETUP_DATA_EVENT_KEYWORD = `siligong.dev`;
 export const TECH_BALLOT_TABLE = `techBallot`;
 
 export const VOTE_API_ENDPOINT = `/api/vote`;
+
+export const MIN_MOST_VOTES = 10;
