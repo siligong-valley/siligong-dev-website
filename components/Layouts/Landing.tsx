@@ -40,6 +40,35 @@ export const LandingLayout = styled.section`
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        @media (max-width: ${theme.mediaQuery.m}) {
+            grid:
+                "about" auto
+                "poll" auto
+                "contact" auto
+                "sponsors" auto
+                "social" auto
+                / 1fr;
+
+            grid-gap: ${gridSquares(20)} 0;
+            justify-items: center;
+
+            .about {
+                position: static;
+                transform: none;
+            }
+
+            .poll,
+            .contact,
+            .sponsors,
+            .social {
+                width: 100%;
+                max-width: ${gridSquares(87)};
+
+                align-self: unset;
+                justify-self: unset;
+            }
+        }
     `}
 `;
 
@@ -104,6 +133,12 @@ export const ContactLayout = styled.section`
                 display: flex;
             }
         }
+
+        @media (max-width: ${theme.mediaQuery.m}) {
+            ul {
+                align-items: flex-start;
+            }
+        }
     `}
 `;
 
@@ -151,6 +186,10 @@ export const SocialLayout = styled.ul`
             a {
                 padding: ${gridSquares(1.75)};
             }
+        }
+
+        @media (max-width: ${theme.mediaQuery.m}) {
+            justify-content: center;
         }
     `}
 `;

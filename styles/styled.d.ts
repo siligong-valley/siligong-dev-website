@@ -34,6 +34,7 @@ declare module "styled-components" {
             square: number;
         };
         mediaQuery: {
+            m: string;
             s: string;
         };
     }

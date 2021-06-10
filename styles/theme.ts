@@ -40,6 +40,7 @@ const theme: DefaultTheme = {
         square: GRID_SQUARE,
     },
     mediaQuery: {
+        m: `960px`,
         s: `500px`,
     },
 };

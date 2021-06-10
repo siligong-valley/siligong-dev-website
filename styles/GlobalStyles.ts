@@ -78,8 +78,10 @@ export const GlobalStyles = createGlobalStyle`
         flex-grow: 1;
         /* Safari bug fix */
         flex-shrink: 0;
-
         padding: ${gridSquares(4)};
+
+        /* ensures height will expand with children */
+        overflow:auto; 
 
         display: flex;
         flex-direction: column;
