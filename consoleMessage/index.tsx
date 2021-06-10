@@ -46,9 +46,11 @@ export const consoleMessage = `
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 
 
 
-Hey there fellow Dev! 
-While you are here, have a cheeky squizz at some of the jobs in Siligong Valley. 
-https://www.siligongvalley.com/jobs
+                                   Hey there fellow Dev!
+
+    While you are here, have a cheeky squizz at some of the jobs in Siligong Valley. 
+
+                            https://www.siligongvalley.com/jobs
 
 
 `;
