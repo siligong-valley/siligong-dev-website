@@ -23,6 +23,9 @@ export const TWITTER_FILEPATH = `/icons/twitter.svg`;
 export const MEETUP_FILEPATH = `/icons/meetup.svg`;
 export const EMAIL_FILEPATH = `/icons/email.svg`;
 
+export const EASY_AGILE_FILEPATH = `/sponsors/easyAgile.svg`;
+export const ACCELO_FILEPATH = `/sponsors/accelo.svg`;
+
 export const EMAIL = `jared@easyagile.com`;
 
 export const SLACK_HREF = `https://join.slack.com/t/siligong/shared_invite/zt-pvedqwn7-rQCQRQQEmxpZFGbC5R886Q`;

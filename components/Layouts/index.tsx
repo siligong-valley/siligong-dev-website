@@ -23,16 +23,11 @@ export const PageLayout = styled.section`
     ${({ theme }) => css`
         width: 100%;
         flex-grow: 1;
-        padding: ${gridSquares(6)};
 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
-        border: 1px solid ${theme.colors.border};
-        border-radius: ${theme.borderRadius.pageBorder};
-        box-shadow: inset 0px 0px 0px 2px ${theme.colors.shadow};
 
         > :not(:first-child) {
             margin-top: ${gridSquares(10)};

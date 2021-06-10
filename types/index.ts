@@ -9,6 +9,12 @@ export interface Contact {
     href: string;
 }
 
+export interface Sponsor {
+    href: string;
+    icon: string;
+    name: string;
+}
+
 export interface MeetupEvent {
     name: string;
     time: number;

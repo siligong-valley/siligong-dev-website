@@ -72,3 +72,27 @@ export const ContactLayout = styled.section`
         }
     `}
 `;
+
+export const SponsorsLayout = styled.section`
+    ${({ theme }) => css`
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        > :not(:first-child) {
+            margin-top: ${gridSquares(4)};
+        }
+
+        ul {
+            display: flex;
+
+            > :not(:first-child) {
+                margin-left: ${gridSquares(6)};
+            }
+
+            li {
+                display: flex;
+            }
+        }
+    `}
+`;

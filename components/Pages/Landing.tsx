@@ -5,6 +5,7 @@ import { Contact } from "../Contact";
 import { LandingLayout } from "../Layouts/Landing";
 import { PageHead } from "../PageHead";
 import { Poll } from "../Poll";
+import { Sponsors } from "../Sponsors";
 
 export const Landing = (props: LandingProps) => (
     <>
@@ -13,6 +14,7 @@ export const Landing = (props: LandingProps) => (
             <Poll {...props} />
             <About {...props} />
             <Contact />
+            <Sponsors />
         </LandingLayout>
     </>
 );
