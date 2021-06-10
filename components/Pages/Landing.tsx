@@ -4,6 +4,7 @@ import {
     EMAIL,
     EMAIL_FILEPATH,
     EMAIL_HREF,
+    MEETUP_HREF,
     SILIGONG_LOGO_FILEPATH,
     SITE_DESCRIPTION,
     SITE_HEADING,
@@ -63,15 +64,21 @@ export const Landing = ({
                     )}
                     <MetaLi>
                         <span>Next Meetup:</span>
-                        {nextEvent ? (
-                            <>
-                                <strong>
-                                    {timestampToDisplay(nextEvent.time)}
-                                </strong>
+                        <a href={MEETUP_HREF} {...externalLinkProps}>
+                            {nextEvent ? (
+                                <>
+                                    <strong>
+                                        {timestampToDisplay(nextEvent.time)}
+                                    </strong>
+                                </>
+                            ) : (
+                                <strong>to be determined</strong>
+                            )}
+                        </a>
+                        {nextEvent && (
+                            <span>
                                 &nbsp; [ {nextEvent.yes_rsvp_count} attending ]
-                            </>
-                        ) : (
-                            <strong>to be determined</strong>
+                            </span>
                         )}
                     </MetaLi>
                 </MetaLayout>
