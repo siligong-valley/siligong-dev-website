@@ -113,6 +113,9 @@ export const SponsorsLayout = styled.section`
         flex-direction: column;
         align-items: flex-start;
 
+        /* for alignment */
+        transform: translateY(${gridSquares(2)});
+
         > :not(:first-child) {
             margin-top: ${gridSquares(6)};
         }
